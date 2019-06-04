@@ -16,9 +16,20 @@
         opacity: 0.5;
         transition: opacity 0.3s, color 0.3s;
         display: flex;
+        margin-top: 7px;
 
         &:hover {
             opacity: 1;
+        }
+    }
+
+    .sub-items {
+        transition: max-height 0.3s;
+        overflow: hidden;
+        max-height: 0px;
+
+        &.expanded {
+            max-height: 200px;
         }
     }
 }

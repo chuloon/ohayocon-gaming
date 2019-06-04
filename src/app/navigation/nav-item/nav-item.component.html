@@ -2,7 +2,7 @@
   <span (click)="expandOrSelectItem()">
     <img [ngClass]="{'expanded': isExpanded}" *ngIf="item.subItems" src="assets/img/chevron-right-18.png">{{ item.name }}
   </span>
-  <div *ngIf="item.subItems">
+  <div #refEl class="sub-items" [ngClass]="{'expanded': isExpanded}">
       <app-nav-item *ngFor="let subItem of item.subItems" [item]="subItem"></app-nav-item>
   </div>
 </div>
