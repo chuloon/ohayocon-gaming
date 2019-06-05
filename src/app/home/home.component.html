@@ -1,11 +1,21 @@
 <div class="home-container">
   <div class="banner">
     <div class="banner-content">
-      <h4>ohayocon gaming</h4>
+      <h4 style="margin-bottom: -10px;">ohayocon gaming</h4>
       <h1>the real reason you come</h1>
-      <h4>to the con anyway</h4>
+      <h4 style="margin-top: -10px;">to the con anyway</h4>
 
-      <p-autoComplete [(ngModel)]="gameToPlay" [placeholder]="'What game do you want to play?'"></p-autoComplete>
+      <div class="typeahead-container">
+        <p-autoComplete 
+          [(ngModel)]="gameToPlay" 
+          [suggestions]="filteredGameList" 
+          [placeholder]="'What game do you want to play?'" 
+          [styleClass]="'game-to-play'"
+          [dropdown]="true"
+          (completeMethod)="filterGameList($event)"
+          (onSelect)="selectGame($event)">
+        </p-autoComplete>
+      </div>
     </div>
   </div>
 </div>
